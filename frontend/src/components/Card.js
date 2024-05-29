@@ -5,11 +5,12 @@ const Card = ({ todo, deleteHandler }) => {
     return (
         <div>
             <h3>{todo.text}</h3>
-            <button onClick={deleteHandler}>delete</button>
+            <button onClick={deleteHandler}>Delete</button>
+            <br/>
             <Link
-                to={`/${todo._id}`} 
+                to={`/edit/${todo._id}`} 
             >
-            edit
+            Edit
             </Link>
         </div>
     )

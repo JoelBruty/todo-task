@@ -13,8 +13,13 @@ const EditTodo = () => {
             _id: toUpdate._id,
             text: userInput
         }
+        console.log(obj)
+        console.log(obj._id)
+        console.log(obj.text)
+        let response = await updateTodo(obj)
+        console.log(response)
 
-        alert('edited item')
+        alert('Edited item')
     }
 
     useEffect(() => {
@@ -26,12 +31,13 @@ const EditTodo = () => {
     },[])
     return (
         <div>
-            <h1>edit</h1>
-            <h2>{toUpdate.text}</h2>
+            <h1>Edit Item</h1>
+            <h2>Current: {toUpdate.text}</h2>
             <input 
-                onChange={() => {}}
+                value={userInput}
+                onChange={(e) => {setUserInput(e.target.value)}}
             />
-            <button onClick={submitHandler}>submit</button>
+            <button onClick={submitHandler}>Submit</button>
         </div>
     )
 }

@@ -5,10 +5,11 @@ const Navbar = () => {
             <header>
                 <div>
                     <Link to='/'>
-                        my list
+                        My list
                     </Link>
-                    <Link to='/add-todo'>
-                        add item
+                    <br/>
+                    <Link to='/add'>
+                        Add item
                     </Link>
                 </div>
             </header>
