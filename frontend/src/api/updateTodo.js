@@ -11,7 +11,9 @@ export const updateTodo = async (todo) => {
             'Content-Type': 'application/json'
         },
         // body updated the "text" in your model with the text you sent as parameter 
-        body: JSON.stringify(todo.text)
+        body: JSON.stringify({
+            text: todo.text
+        })
     })
     const json = await response.json()
     return json
