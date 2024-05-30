@@ -7,7 +7,16 @@ const Home = () => {
 
 
     const deleteHandler = async (todo) => {
-      
+        // what function will run?
+        // console.log(todo._id)
+        let response = await deleteTodo(todo, deleteHandler)
+        console.log(response)
+        
+        let updated = [...todos] //create array of current todos
+        updated = updated.filter(items => items._id !== response._id) //return elements that do not match the entry that was deleted (exclude the deleted entry)
+        setTodos(updated) //set todos to array (removing deleted entry)
+
+        alert("Deleted item")
     }
     useEffect(() => {
         const fetchTodos = async () => {
